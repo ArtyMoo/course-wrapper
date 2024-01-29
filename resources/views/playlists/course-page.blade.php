@@ -1,6 +1,4 @@
 <x-layout>
-    <link href="https://vjs.zencdn.net/8.10.0/video-js.css" rel="stylesheet" />
-    <script src="https://vjs.zencdn.net/8.10.0/video.min.js"></script>
     <x-show-container>
         <div class="mx-auto">
             <div class="grid grid-cols-4 gap-4">
@@ -16,16 +14,7 @@
                     @endfor
                 </div>
                 <div class="item1 col-span-3">
-                    <video
-                           controls
-                           id="my-video"
-                           class="video-js"
-                           preload="auto"
-                           width="1200"
-                           height="658"
-                           poster=""
-                           data-setup="{}"
-                    >
+                    <video width="1200" height="658" controls>
                         <source src="{{ asset($authorSlug . '-' . $courseSlug . '/video/video' . request('video') . '.mp4') }}" type="video/mp4">
                     </video>
                 </div>
