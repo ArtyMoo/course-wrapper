@@ -1,9 +1,7 @@
-@props(['course'])
-
-<div class="lg:w-1/3 md:w-1/2 p-2">
+<div class="p-2">
     <div class="relative overflow-hidden rounded-md">
         <div class="relative block w-full">
-            <a href="{{ 'courses/'. $course->author->slug .'/'. $course->slug }}">
+            <a wire:navigate  href="{{ 'courses/'. $course->author->slug .'/'. $course->slug }}">
                 @if(File::exists(public_path($course->author->slug .'/'. $course->slug .'/cover.jpg')))
                     <img src="{{ asset($course->author->slug .'/'. $course->slug .'/cover.jpg') }}" class=" items-center object-cover pointer-events-none justify-evenly dark:text-white" loading="lazy" alt="">
                 @else
@@ -15,7 +13,7 @@
     </div>
     <div class="flex flex-col mt-2">
         <div class="flex flex-row">
-            <a href="{{ 'courses/'. $course->author->slug .'/'. $course->slug }}" class="px-1 mr-2 bg-black rounded-full hover:transition dark:bg-gray-100 hover:scale-110">
+            <a wire:navigate href="{{ 'courses/'. $course->author->slug .'/'. $course->slug }}" class="px-1 mr-2 bg-black rounded-full hover:transition dark:bg-gray-100 hover:scale-110">
                 <svg xmlns="http://www.w3.org/2000/svg"
                      viewBox="0 0 24 24"
                      fill="currentColor" aria-hidden="true"
@@ -33,3 +31,4 @@
         </div>
     </div>
 </div>
+

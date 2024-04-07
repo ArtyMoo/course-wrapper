@@ -14,16 +14,17 @@ class CourseController extends Controller
 {
     public function index()
     {
-        return view('index', [
+        return view('livewire.courses-list', [
             'courses' => Course::all(),
-            'authors' => Course::with('author')->get(),
-            'categories' => Course::with('category')->get()
         ]);
     }
 
     public function show(Request $request, $authorSlug, $courseSlug)
     {
-        $videoDir = File::files( public_path($authorSlug . '-' . $courseSlug . '/video') );
+        if(File::exists(public_path($authorSlug . '/' . $courseSlug . '/video')))
+            $videoDir = File::files( public_path($authorSlug . '/' . $courseSlug . '/video') );
+        else
+            return view('playlists.course-404');
 
         return response()->view('playlists.course-page', [
             'authorSlug' => $authorSlug,

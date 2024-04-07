@@ -15,7 +15,10 @@ class DatabaseSeeder extends Seeder
          \App\Models\User::factory(10)->create();
 
          \App\Models\User::factory()->create([
-             'name' => 'arty',
+             'username' => 'arty',
+             'password' => '123qwe',
+             'firstname' => 'Arty',
+             'lastname' => 'The Party',
              'email' => 'giorgiomazzei1@gmail.com',
          ]);
 
@@ -85,8 +88,8 @@ class DatabaseSeeder extends Seeder
             'slug' => 'consulting-and-coaching-bootcamp',
             'title' => 'Consulting & Coaching Bootcamp',
             'excerpt' => 'Boost your consulting career with the Consulting And Coaching Bootcamp. Learn to enhance your business, secure higher pay, and gain clients fast. Avoid common mistakes. A comprehensive blueprint for success. Invest now for substantial income growth.',
-            'url' => 'dan-s-kennedy-consulting-and-coaching-bootcamp',
-            'thumbnail' => '/images/test-1280x720.jpg'
+            'url' => 'consulting-and-coaching-bootcamp',
+            'thumbnail' => '/images/default-1280x720.jpg'
         ]);
 
         \App\Models\Course::factory()->create([
@@ -96,7 +99,7 @@ class DatabaseSeeder extends Seeder
             'title' => 'Magnetic Marketing 2014',
             'excerpt' => 'Unlock success with Dan Kennedy`s Magnetic Marketing course. Transform your business, attract clients effortlessly, and dominate your market. A strategic blueprint for maximum impact.',
             'url' => '/media/artymoo/TOSHIBA EXT/Business, Marketing & Personal Development/Dan Kennedy/Dan Kennedy - Magnetic Marketing 2014 + Make Them Buy Now/More Bonuses',
-            'thumbnail' => '/images/test-1280x720.jpg'
+            'thumbnail' => '/images/default-1280x720.jpg'
         ]);
 
         \App\Models\Course::factory()->create([
@@ -106,7 +109,7 @@ class DatabaseSeeder extends Seeder
             'title' => 'Opportunity Marketing Concepts',
             'excerpt' => 'Tap into success with Dan Kennedy`s Opportunity Marketing Concepts course. Learn strategic approaches, seize opportunities, and elevate your business. A game-changing blueprint for maximum growth.',
             'url' => '/media/artymoo/TOSHIBA EXT/Business, Marketing & Personal Development/Dan Kennedy/Dan Kennedy - Opportunity Marketing Concepts',
-            'thumbnail' => '/images/test-1280x720.jpg'
+            'thumbnail' => '/images/default-1280x720.jpg'
         ]);
 
         \App\Models\Course::factory()->create([
@@ -116,7 +119,7 @@ class DatabaseSeeder extends Seeder
             'title' => 'Business Building Blueprint',
             'excerpt' => 'Learn how to use information marketing to boost you business growth.',
             'url' => '/media/artymoo/TOSHIBA EXT/Business, Marketing & Personal Development/Dan Kennedy',
-            'thumbnail' => '/images/test-1280x720.jpg'
+            'thumbnail' => '/images/default-1280x720.jpg'
         ]);
     }
 }
